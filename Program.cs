@@ -1,4 +1,6 @@
-﻿namespace Building_Logics
+﻿using System.Xml.Schema;
+
+namespace Building_Logics
 {
     internal class Program
     {
@@ -6,7 +8,7 @@
         {
             //Find Odd or Even Number;
 
-            Console.WriteLine("Please a Number");
+            Console.WriteLine("Please enter a Number");
             int givenNumer = int.Parse(Console.ReadLine());
 
             if (givenNumer % 2 == 0)
@@ -141,17 +143,159 @@
             int totalSum = 0;
             int remNumber = 0;
 
-            while(sumOfDigit != 0)
+            //while(sumOfDigit != 0)
+            //{
+            //    remNumber = sumOfDigit % 10;
+
+            //    sumOfDigit = sumOfDigit / 10;
+
+            //    totalSum = totalSum + remNumber;
+            //}
+
+            //using for loop
+
+            for(; sumOfDigit != 0; sumOfDigit /= 10)
             {
                 remNumber = sumOfDigit % 10;
-
-                sumOfDigit = sumOfDigit / 10;
-
                 totalSum = totalSum + remNumber;
             }
             Console.WriteLine("Your Sum of Digits is " + totalSum);
 
+            //Sum of n Numbers
 
+            Console.WriteLine("Please enter a number to get its sum");
+            int givenNumberForSummation = int.Parse(Console.ReadLine());
+
+            int xsum = 0;
+
+            for(int i = 0; i <= givenNumberForSummation; i++)
+            {
+                xsum += i;
+            }
+            Console.WriteLine("Sum of your Number is " + xsum);
+
+
+            //Degree Conversion
+
+            //Degree to Fahrenheit
+
+            Console.WriteLine("Please enter a temparature in degree celsius");
+            int isDegreeCelcius = int.Parse(Console.ReadLine());
+
+            //Formula method
+            int convertedToFahrenhit = (isDegreeCelcius * 9 / 5) + 32;
+            Console.WriteLine("Fahrenheit = " + convertedToFahrenhit);
+
+            //Fahrenheit to Degree Celsius
+
+            Console.WriteLine("Please enter a temparature in Fahrenheit celsius");
+            int isFahrenheit = int.Parse(Console.ReadLine());
+
+            int convertedToDegreeCelsius = ((isFahrenheit - 32) * 5) / 9;
+            Console.WriteLine("Degree Celsius = " + convertedToDegreeCelsius);
+
+
+            //Find the square root of a positive number
+
+            Console.WriteLine("Please enter a positive number to find it's square root");
+            double sqNumber = Convert.ToInt32(Console.ReadLine());
+            double sqRootNumber = Math.Sqrt(sqNumber);
+            
+
+            if (sqNumber < 0)
+            {
+                Console.WriteLine("You have entered negative number");
+            }
+            else
+            {
+                Console.WriteLine("Square Root is = " + sqRootNumber);
+            }
+
+
+            //Find the Cube root of a positive number
+
+            Console.WriteLine("Please enter a positive number to find it's Cube root");
+            double cubeNumber = Convert.ToInt32(Console.ReadLine());
+            double cubeRootNumber = Math.Cbrt(cubeNumber);
+            Console.WriteLine("Cube Root is = " + cubeRootNumber);
+
+
+            /*
+             Print stars in the below pattern
+                *
+                **
+                ***
+                ****
+                *****
+                ******
+                *******
+                
+             */
+
+            for (int row = 1; row < 8; row++)
+            {
+                for(int col = 1; col <= row; col++)
+                {
+                    Console.Write("*"); 
+                }
+                Console.WriteLine();// breaking the lines
+            }
+
+            Console.WriteLine("----------------------------------");
+            /*
+             
+            *******
+            ******
+            *****
+            ****
+            ***
+            **
+            *
+             
+             */
+            for (int row = 7; row >=1; row--)
+            {
+                for(int col = 1; col <= row; col++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            //Print Alphabets like stars
+
+            /*
+             A
+             AB
+             ABC
+             ABCD... till 10 row
+             
+             
+             */
+
+            //string alphabets = "A";
+
+            //for (int row = 1; row <= 10; row--)
+            //{
+            //    for (int col = 1; col <= row; col++)
+            //    {
+
+            //    }
+
+            //}
+
+            //Checkig alphabets increments
+
+
+            //char alphaStr;
+            //for (char alphaStr = 'A'; i < 5; i++)
+            //{
+
+            //    alphaStr++;
+            //    Console.Write(alphaStr);
+            //}
+
+
+            
 
         }
     }
