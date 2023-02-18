@@ -1,4 +1,7 @@
-﻿using System.Xml.Schema;
+﻿using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Schema;
+using System.Collections.Generic;
 
 namespace Building_Logics
 {
@@ -6,6 +9,131 @@ namespace Building_Logics
     {
         static void Main(string[] args)
         {
+           
+
+            
+            //Convert digits to words
+
+            string[] words = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
+            //Console.WriteLine(words[0]);
+            Console.WriteLine("Please enter the postive number greater than 0 to convert into words: ");
+            int numbersToWord = Convert.ToInt32(Console.ReadLine());
+
+            int rem = 0;
+            string inWords = string.Empty;
+            
+            //Reversing the number
+
+            int revRem = 0;
+            int sumRev = 0;
+            int modRev = 0;
+
+            while(numbersToWord > 0)
+            {
+                modRev = numbersToWord % 10;
+
+                sumRev = (sumRev * 10) + modRev;
+
+                numbersToWord/= 10;
+
+
+            }
+
+            numbersToWord = sumRev;
+            Console.WriteLine(sumRev);
+
+            while (numbersToWord > 0)
+            {
+                rem = numbersToWord % 10;
+                numbersToWord = numbersToWord / 10;
+
+                for (int i = 0; i <= rem; i++)
+                {
+                    if (rem == i)
+                    {
+                        inWords = words[i];
+                        Console.Write(inWords + " ");
+
+                    }
+
+                }
+            }
+            
+
+
+
+                //switch (rem)
+                ////{
+                //    case 0:
+                //        Console.WriteLine(words[0]);
+                //        break;
+                //    case 1:
+                //        Console.WriteLine(words[1]);
+                //        break;
+                //    case 2:
+                //        Console.WriteLine(words[2]);
+                //        break;
+                //    case 3:
+                //        Console.WriteLine(words[3]);
+                //        break;
+                //    case 4:
+                //        Console.WriteLine(words[4]);
+                //        break;
+                //    case 5:
+                //        Console.WriteLine(words[5]);
+                //        break;
+                //    case 6:
+                //        Console.WriteLine(words[6]);
+                //        break;
+                //    case 7:
+                //        Console.WriteLine(words[7]);
+                //        break;
+                //    case 8:
+                //        Console.WriteLine(words[8]);
+                //        break;
+                //    case 9:
+                //        Console.WriteLine(words[9]);
+                //        break;
+                //}
+
+                //numbersToWord = numbersToWord / 10;
+
+
+            
+            //outWords.Reverse<>;
+            //Console.WriteLine(outWords);
+
+            Console.WriteLine();
+            //Currency Converter
+
+            Console.WriteLine("Please select your currency conversion choice: \n Press 1 - USD to INR \n Press 2 - Euro to INR \n Press 3 - Yen to INR");
+            double CurrencyChoice = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter your Amount: ");
+            double userInputCurrency = Convert.ToDouble(Console.ReadLine());
+
+            switch (CurrencyChoice)
+            {
+                case 1:
+                    double dollarToIND = userInputCurrency * 83;
+                    Console.WriteLine("Total Indian Rupees = " + dollarToIND);
+                    break;
+                case 2:
+                    double euroToIND = userInputCurrency * 89;
+                    Console.WriteLine("Total Indian Rupees = " + euroToIND);
+                    break;
+                case 3:
+                    double yenToIND = userInputCurrency * 0.62;
+                    Console.WriteLine("Total Indian Rupees = " + yenToIND);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input");
+                    break;
+
+            }
+
+
+
             //Find Odd or Even Number;
 
             Console.WriteLine("Please enter a Number");
@@ -267,10 +395,9 @@ namespace Building_Logics
              A
              AB
              ABC
-             ABCD... till 10 row
-             
-             
+             ABCD
              */
+
 
             //string alphabets = "A";
 
@@ -295,8 +422,15 @@ namespace Building_Logics
             //}
 
 
+            //-------------------------------------------------------------------------
             
 
-        }
+
+
+
+        }//Main() Ends Here ---------------------
+
+        
+
     }
 }
